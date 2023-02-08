@@ -1,4 +1,5 @@
 import 'package:faramove_test/presentation/screens/home/widgets/quick_action_widget.dart';
+import 'package:faramove_test/presentation/screens/home/widgets/tips_widget.dart';
 import 'package:faramove_test/presentation/screens/home/widgets/warning_widget.dart';
 import 'package:faramove_test/presentation/theme/palette.dart';
 import 'package:faramove_test/presentation/utils/extensions.dart';
@@ -64,97 +65,129 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: config.sw(20)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const YMargin(10),
-                  const Spacer(),
-                  Text(
-                    "Quick Actions",
-                    maxLines: 1,
-                    style: TextStyle(
-                      fontSize: config.sp(18),
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  const YMargin(16),
-                  const QuickActionWidget(
-                    color: Palette.orange,
-                    subtitleColor: Color(0xffFCF3E3),
-                    title: "Book a session", 
-                    subtitle: "Get prompt assistance from medical professionals", 
-                    asset: "book_session"
-                  ),
-                  const YMargin(16),
-                  const QuickActionWidget(
-                    color: Palette.brown, 
-                    title: "Diary", 
-                    subtitleColor: Color(0xffFBDCD0),
-                    subtitle: "Listen to the highlight from your previous session", 
-                    asset: "diary"
-                  ),
-                  const YMargin(16),
-                  const QuickActionWidget(
-                    color: Palette.purple, 
-                    subtitleColor: Color(0xffCEBDF9),
-                    title: "Virtual assistant", 
-                    subtitle: "Get easy access to converse with the assistant on how you feel", 
-                    asset: "virtual_assistant"
-                  ),
-                  const Spacer(),
-                  Container(
-                    height: 4,
-                    color: const Color(0xffF8F9FB),
-                  ),
-                  ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    leading: Text(
-                      "Upcoming Session (0)",
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const YMargin(20),
+                    Text(
+                      "Quick Actions",
                       maxLines: 1,
                       style: TextStyle(
+                        fontSize: config.sp(16),
                         fontWeight: FontWeight.w700,
-                        color: Palette.black,
-                        fontSize: config.sp(16)
                       ),
                     ),
-                    trailing: SvgPicture.asset(
-                      "arrow_forward".svg,
-                      height: config.sh(16),
-                      width: config.sw(26.43),
+                    const YMargin(16),
+                    const QuickActionWidget(
+                      color: Palette.orange,
+                      subtitleColor: Color(0xffFCF3E3),
+                      title: "Book a session", 
+                      subtitle: "Get prompt assistance from medical professionals", 
+                      asset: "book_session"
+                    ),
+                    const YMargin(16),
+                    const QuickActionWidget(
+                      color: Palette.brown, 
+                      title: "Diary", 
+                      subtitleColor: Color(0xffFBDCD0),
+                      subtitle: "Listen to the highlight from your previous session", 
+                      asset: "diary"
+                    ),
+                    const YMargin(16),
+                    const QuickActionWidget(
+                      color: Palette.purple, 
+                      subtitleColor: Color(0xffCEBDF9),
+                      title: "Virtual assistant", 
+                      subtitle: "Get easy access to converse with the assistant on how you feel", 
+                      asset: "virtual_assistant"
+                    ),
+                    Container(
+                      height: 4,
+                      color: const Color(0xffF8F9FB),
+                    ),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Text(
+                        "Upcoming Session (0)",
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Palette.black,
+                          fontSize: config.sp(16)
+                        ),
+                      ),
+                      trailing: SvgPicture.asset(
+                        "arrow_forward".svg,
+                        height: config.sh(16),
+                        width: config.sw(26.43),
+                      )
+                    ),
+                    Container(
+                      height: 4,
+                      color: const Color(0xffF8F9FB),
+                    ),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: Text(
+                        "Tips to stay healthy",
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Palette.black,
+                          fontSize: config.sp(16)
+                        ),
+                      ),
+                      subtitle: Text(
+                        "Get simple health tips.",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          color: Palette.lightGrey,
+                          fontSize: config.sp(13)
+                        ),
+                      ),
+                      trailing: SvgPicture.asset(
+                        "arrow_forward".svg,
+                        height: config.sh(16),
+                        width: config.sw(26.43),
+                      )
+                    ),
+                    SizedBox(
+                      height: config.sh(150),
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        padding: EdgeInsets.symmetric(vertical: config.sh(10)),
+                        children:[
+                          TipsWidget(
+                            title: "Some of the basic things to avoid",
+                            color: const Color(0xffFEF8F6),
+                            image: SvgPicture.asset(
+                              "tips_asset1".svg
+                            ),
+                          ),
+                          const XMargin(20),
+                          TipsWidget(
+                            title: "Common\nsymptoms",
+                            color: const Color(0xffF8F6FE),
+                            image: SvgPicture.asset(
+                              "tips_asset2".svg
+                            ),
+                          ),
+                          const XMargin(20),
+                          TipsWidget(
+                            title: "Fruits you can take in the morning",
+                            color: const Color(0xffF8F9FB),
+                            image: Image.asset(
+                              "fruits".png
+                            ),
+                          )
+                        ],
+                      ),
                     )
-                  ),
-                  Container(
-                    height: 4,
-                    color: const Color(0xffF8F9FB),
-                  ),
-                  ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(
-                      "Tips to stay healthy",
-                      maxLines: 1,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        color: Palette.black,
-                        fontSize: config.sp(16)
-                      ),
-                    ),
-                    subtitle: Text(
-                      "Get simple health tips.",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: Palette.lightGrey,
-                        fontSize: config.sp(12)
-                      ),
-                    ),
-                    trailing: SvgPicture.asset(
-                      "arrow_forward".svg,
-                      height: config.sh(16),
-                      width: config.sw(26.43),
-                    )
-                  ),
-                  const Spacer()
-                ],
+                  ],
+                ),
               ),
             ),
           )

@@ -71,7 +71,8 @@ class _DashboardPageState extends State<DashboardPage> {
         ),
         type: BottomNavigationBarType.fixed,
         unselectedLabelStyle: const TextStyle(
-          color: Colors.black
+          color: Colors.black,
+          fontWeight: FontWeight.w400
         ),
         items: [
           BottomNavigationBarItem(

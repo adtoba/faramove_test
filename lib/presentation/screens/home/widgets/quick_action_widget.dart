@@ -14,7 +14,8 @@ class QuickActionWidget extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.subtitleColor,
-    required this.asset
+    required this.asset,
+    this.onTap
   });
 
   final Color? color;
@@ -22,55 +23,59 @@ class QuickActionWidget extends StatelessWidget {
   final String? subtitle;
   final Color? subtitleColor;
   final String? asset;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final config = SizeConfig();
     
-    return Container(
-      height: config.sh(104),
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(5)
-      ),
-      padding: EdgeInsets.symmetric(horizontal: config.sw(20)),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "$title",
-                  maxLines: 1,
-                  style: TextStyle(
-                    fontSize: config.sp(16),
-                    color: Palette.white,
-                    fontWeight: FontWeight.w600
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: config.sh(104),
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(5)
+        ),
+        padding: EdgeInsets.symmetric(horizontal: config.sw(20)),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "$title",
+                    maxLines: 1,
+                    style: TextStyle(
+                      fontSize: config.sp(15),
+                      color: Palette.white,
+                      fontWeight: FontWeight.w600
+                    ),
                   ),
-                ),
-                const YMargin(6),
-                Text(
-                  "$subtitle",
-                  maxLines: 3,
-                  style: TextStyle(
-                    fontSize: config.sp(12),
-                    fontWeight: FontWeight.w500,
-                    color: subtitleColor
-                  ),
-                )
-              ],
+                  const YMargin(6),
+                  Text(
+                    "$subtitle",
+                    maxLines: 3,
+                    style: TextStyle(
+                      fontSize: config.sp(12),
+                      fontWeight: FontWeight.w500,
+                      color: subtitleColor
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-          const XMargin(10),
-          SvgPicture.asset(
-            "$asset".svg,
-            height: config.sh(80),
-            width: config.sw(80),
-          )
-        ],
+            const XMargin(10),
+            SvgPicture.asset(
+              "$asset".svg,
+              height: config.sh(80),
+              width: config.sw(80),
+            )
+          ],
+        ),
       ),
     );
   }
