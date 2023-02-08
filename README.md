@@ -1,16 +1,14 @@
 # faramove_test
 
-A new Flutter project.
+A test flutter project.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+![Alt text](https://user-images.githubusercontent.com/24235903/217480054-48b7e446-4ce5-4c6e-838a-5d6aa37ec4c7.png "Home page")
 
-A few resources to get you started if this is your first Flutter project:
+![Alt text](https://user-images.githubusercontent.com/24235903/217480499-9f17505a-e183-45ba-9029-f42f95180a81.png "Community page")
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Alt text](https://user-images.githubusercontent.com/24235903/217480667-6cd4c1c5-c5a1-4037-bc86-4c727367ea0a.png "Podcast page")
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
