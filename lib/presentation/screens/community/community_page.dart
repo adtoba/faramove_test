@@ -48,6 +48,7 @@ class _CommunityPageState extends State<CommunityPage> {
             height: 40,
           );
         },
+        physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: config.sw(20), vertical: config.sh(30)),
         itemCount: dummyData.length,
         shrinkWrap: true,

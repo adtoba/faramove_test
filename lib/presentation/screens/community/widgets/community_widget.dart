@@ -79,7 +79,7 @@ class CommunityWidget extends StatelessWidget {
                   const Spacer(),
                   SizedBox(
                     width: config.sw(78),
-                    height: config.sh(32),
+                    height: config.sh(40),
                     child: TextButton(
                       onPressed: onJoinTapped,
                       style: ButtonStyle(

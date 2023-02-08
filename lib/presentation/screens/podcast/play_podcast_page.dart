@@ -67,7 +67,7 @@ class _PlayPodcastPageState extends State<PlayPodcastPage> {
                 ),
               ),
             ),
-            const YMargin(20),
+            const Spacer(),
             ListTile(
               contentPadding: const EdgeInsets.symmetric(horizontal: 20),
               title: Text(
@@ -127,7 +127,7 @@ class _PlayPodcastPageState extends State<PlayPodcastPage> {
                 ],
               ),
             ),
-            const YMargin(10),
+            const Spacer(),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: config.sw(20)),
               child: Row(
@@ -176,7 +176,7 @@ class _PlayPodcastPageState extends State<PlayPodcastPage> {
                   const Spacer(),
                   SizedBox(
                     width: config.sw(96),
-                    height: config.sh(30),
+                    height: config.sh(40),
                     child: TextButton(
                       onPressed: () {},
                       style: ButtonStyle(
